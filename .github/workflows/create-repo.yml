@@ -15,6 +15,10 @@ on:
         description: 'Make repository private'
         required: false
         type: boolean
+      port_context:
+        description: 'Port internal context (not used)'
+        required: false
+        type: string
 
 jobs:
   create-repo:
