@@ -32,7 +32,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           echo "Creating repo: ${{ github.event.inputs.repo_name }}"
-          gh auth setup-git -h github.com --token "$GH_TOKEN"
           gh repo create ${{ github.repository_owner }}/${{ github.event.inputs.repo_name }} \
             --description "${{ github.event.inputs.description }}" \
             $([[ "${{ github.event.inputs.private }}" == "true" ]] && echo "--private" || echo "--public") \
